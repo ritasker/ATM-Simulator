@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{B12DC51F-E54E-4717-BE9C-3D99E926607D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATMSimulator.App", "Application\ATMSimulator.App\ATMSimulator.App.csproj", "{4059926D-FF6B-4D82-8034-1EBEC39F6278}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{382F5542-72E4-4A5D-924C-0F5464D4F9F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATMSimulator.AcceptanceTests", "Tests\ATMSimulator.AcceptanceTests\ATMSimulator.AcceptanceTests.csproj", "{484886B2-2138-4D44-82A1-47E0C37A22D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATMSimulator.UnitTests", "Tests\ATMSimulator.UnitTests\ATMSimulator.UnitTests.csproj", "{3215AAA3-37AF-445A-B99F-4E8962CB4D78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4059926D-FF6B-4D82-8034-1EBEC39F6278}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4059926D-FF6B-4D82-8034-1EBEC39F6278}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{4059926D-FF6B-4D82-8034-1EBEC39F6278}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{4059926D-FF6B-4D82-8034-1EBEC39F6278}.Debug|x86.ActiveCfg = Debug|x86
+		{4059926D-FF6B-4D82-8034-1EBEC39F6278}.Debug|x86.Build.0 = Debug|x86
+		{4059926D-FF6B-4D82-8034-1EBEC39F6278}.Release|Any CPU.ActiveCfg = Release|x86
+		{4059926D-FF6B-4D82-8034-1EBEC39F6278}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{4059926D-FF6B-4D82-8034-1EBEC39F6278}.Release|Mixed Platforms.Build.0 = Release|x86
+		{4059926D-FF6B-4D82-8034-1EBEC39F6278}.Release|x86.ActiveCfg = Release|x86
+		{4059926D-FF6B-4D82-8034-1EBEC39F6278}.Release|x86.Build.0 = Release|x86
+		{484886B2-2138-4D44-82A1-47E0C37A22D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484886B2-2138-4D44-82A1-47E0C37A22D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484886B2-2138-4D44-82A1-47E0C37A22D0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{484886B2-2138-4D44-82A1-47E0C37A22D0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{484886B2-2138-4D44-82A1-47E0C37A22D0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{484886B2-2138-4D44-82A1-47E0C37A22D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484886B2-2138-4D44-82A1-47E0C37A22D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{484886B2-2138-4D44-82A1-47E0C37A22D0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{484886B2-2138-4D44-82A1-47E0C37A22D0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{484886B2-2138-4D44-82A1-47E0C37A22D0}.Release|x86.ActiveCfg = Release|Any CPU
+		{3215AAA3-37AF-445A-B99F-4E8962CB4D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3215AAA3-37AF-445A-B99F-4E8962CB4D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3215AAA3-37AF-445A-B99F-4E8962CB4D78}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3215AAA3-37AF-445A-B99F-4E8962CB4D78}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3215AAA3-37AF-445A-B99F-4E8962CB4D78}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3215AAA3-37AF-445A-B99F-4E8962CB4D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3215AAA3-37AF-445A-B99F-4E8962CB4D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3215AAA3-37AF-445A-B99F-4E8962CB4D78}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3215AAA3-37AF-445A-B99F-4E8962CB4D78}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3215AAA3-37AF-445A-B99F-4E8962CB4D78}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4059926D-FF6B-4D82-8034-1EBEC39F6278} = {B12DC51F-E54E-4717-BE9C-3D99E926607D}
+		{484886B2-2138-4D44-82A1-47E0C37A22D0} = {382F5542-72E4-4A5D-924C-0F5464D4F9F4}
+		{3215AAA3-37AF-445A-B99F-4E8962CB4D78} = {382F5542-72E4-4A5D-924C-0F5464D4F9F4}
+	EndGlobalSection
+EndGlobal
