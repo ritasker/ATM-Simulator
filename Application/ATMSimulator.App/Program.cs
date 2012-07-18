@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ATMSimulator.App
+﻿namespace ATMSimulator.App
 {
     class Program
     {
+        private static BankAtm _atm;
+
         static void Main(string[] args)
         {
+            
         }
     }
 }
