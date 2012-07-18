@@ -6,34 +6,34 @@ namespace ATMSimulator.UnitTests
     [Subject(typeof(BankAtm))]
     public class when_SetFunds_is_called
     {
-        private const int FUNDS = 1000;
-        private static BankAtm _subject;
+        const int FUNDS = 1000;
+        static BankAtm _subject;
 
-        private Establish context = () =>
-                                        {
-                                            _subject = new BankAtm();
-                                        };
+        Establish context = () =>
+                                {
+                                    _subject = new BankAtm();
+                                };
 
-        private Because of = () => _subject.SetFunds(FUNDS);
+        Because of = () => _subject.SetFunds(FUNDS);
 
-        private It should_set_the_funds = () => _subject.GetFunds().ShouldEqual(FUNDS);
+        It should_set_the_funds = () => _subject.GetFunds().ShouldEqual(FUNDS);
     }
 
     [Subject(typeof(BankAtm))]
     public class when_GetFunds_is_called
     {
-        private const int FUNDS = 1000;
-        private static int _result;
-        private static BankAtm _subject;
+        const int FUNDS = 1000;
+        static int _result;
+        static BankAtm _subject;
 
-        private Establish context = () =>
+        Establish context = () =>
         {
             _subject = new BankAtm();
             _subject.SetFunds(FUNDS);
         };
 
-        private Because of = () => { _result = _subject.GetFunds(); };
+        Because of = () => { _result = _subject.GetFunds(); };
 
-        private It should_get_the_funds = () => _result.ShouldEqual(FUNDS);
+        It should_get_the_funds = () => _result.ShouldEqual(FUNDS);
     }
 }
