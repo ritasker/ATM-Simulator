@@ -6,18 +6,12 @@ namespace ATMSimulator.AcceptanceTests.Steps
     [Binding]
     public class StepDefinitions
     {
+        protected BankAtm _bankAtm;
+
         [BeforeScenario]
         public void Setup()
         {
-            var atm = new BankAtm();
+            _bankAtm = new BankAtm();
         }
-
-
-        [Given(@"the ATM has money in it")]
-        public void GivenTheATMHasMoneyInIt()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
     }
 }
