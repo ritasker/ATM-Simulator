@@ -9,9 +9,20 @@
   <RecentFiles>
     <RecentFiles>
       <File id="4059926D-FF6B-4D82-8034-1EBEC39F6278/f:Program.cs" caret="0" fromTop="0" />
-      <File id="3215AAA3-37AF-445A-B99F-4E8962CB4D78/f:AtmSpecs.cs" caret="774" fromTop="28" />
+      <File id="484886B2-2138-4D44-82A1-47E0C37A22D0/d:Steps/f:AtmLoginSteps.cs" caret="0" fromTop="0" />
+      <File id="484886B2-2138-4D44-82A1-47E0C37A22D0/d:Steps/f:SetupSteps.cs" caret="341" fromTop="12" />
+      <File id="484886B2-2138-4D44-82A1-47E0C37A22D0/d:Steps/f:StepDefinitions.cs" caret="192" fromTop="8" />
+      <File id="484886B2-2138-4D44-82A1-47E0C37A22D0/d:Features/f:LoginingIn.feature" caret="415" fromTop="14" />
+      <File id="3215AAA3-37AF-445A-B99F-4E8962CB4D78/f:AtmSpecs.cs" caret="414" fromTop="15" />
+      <File id="4059926D-FF6B-4D82-8034-1EBEC39F6278/f:BankAtm.cs" caret="267" fromTop="13" />
     </RecentFiles>
-    <RecentEdits />
+    <RecentEdits>
+      <File id="3215AAA3-37AF-445A-B99F-4E8962CB4D78/f:AtmSpecs.cs" caret="458" fromTop="15" />
+      <File id="484886B2-2138-4D44-82A1-47E0C37A22D0/d:Steps/f:SetupSteps.cs" caret="348" fromTop="12" />
+      <File id="484886B2-2138-4D44-82A1-47E0C37A22D0/d:Steps/f:SetupSteps.cs" caret="152" fromTop="5" />
+      <File id="484886B2-2138-4D44-82A1-47E0C37A22D0/d:Steps/f:StepDefinitions.cs" caret="300" fromTop="11" />
+      <File id="484886B2-2138-4D44-82A1-47E0C37A22D0/d:Steps/f:SetupSteps.cs" caret="293" fromTop="11" />
+    </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
     <NAntPath value="" />
@@ -24,4 +35,17 @@
     </NUnitInstallDir>
     <UseAddins>Never</UseAddins>
   </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="Binding" priority="0" />
+      <Item value="StepDefinitions`0" priority="0" />
+      <Item value="funds" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ATMSimulator.App.BankAtm">
+      <Item value="SetFunds`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToInt16`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
 </Configuration>

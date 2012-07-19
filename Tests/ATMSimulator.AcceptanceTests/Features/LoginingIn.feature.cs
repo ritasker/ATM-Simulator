@@ -73,10 +73,14 @@ namespace ATMSimulator.AcceptanceTests.Features
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Account Number",
-                        "PIN"});
+                        "PIN",
+                        "Balance",
+                        "Overdraft Limit"});
             table1.AddRow(new string[] {
                         "0123456789",
-                        "1337"});
+                        "1337",
+                        "100",
+                        "250"});
 #line 8
  testRunner.And("the following bank accounts have been setup:", ((string)(null)), table1);
 #line hidden

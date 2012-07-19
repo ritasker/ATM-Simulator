@@ -36,4 +36,21 @@ namespace ATMSimulator.UnitTests
 
         It should_get_the_funds = () => _result.ShouldEqual(FUNDS);
     }
+
+    [Subject(typeof(BankAtm))]
+    public class when_AddAccount_is_called
+    {
+        static BankAtm _subject;
+        private const int ACCT_NUM = 0123456789;
+        private const int PIN= 1337;
+        private const int BALANCE= 100;
+        private const int OVERDRAFT_LIMIT= 250;
+
+        Establish context = () =>{ _subject = new BankAtm(); };
+
+        Because of = () => _subject.AddAccount(ACCT_NUM, PIN, BALANCE, OVERDRAFT_LIMIT);
+
+        It should_get_the_funds = () => _subject.Accounts.Count.ShouldEqual(1);
+        
+    }
 }
