@@ -45,7 +45,7 @@ namespace ATMSimulator.UnitTests
 
         Because of = () => _bankAtm.AddAccount(ACCT_NUM, PIN, BALANCE, OVERDRAFT_LIMIT);
 
-        It should_get_the_funds = () => _bankAtm.Accounts.Count.ShouldEqual(1);
+        It should_save_the_account = () => _bankAtm.Accounts.Count.ShouldEqual(1);
         
     }
 
