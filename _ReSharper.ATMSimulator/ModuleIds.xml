@@ -1,6 +1,0 @@
-<Modules>
-  <Module PersistentId="CAFAEBE0-6A20-46CC-A215-947DC28BD5F4" ModuleId="ATMSimulator" />
-  <Module PersistentId="4059926D-FF6B-4D82-8034-1EBEC39F6278" ModuleId="ATMSimulator.App" />
-  <Module PersistentId="484886B2-2138-4D44-82A1-47E0C37A22D0" ModuleId="ATMSimulator.AcceptanceTests" />
-  <Module PersistentId="3215AAA3-37AF-445A-B99F-4E8962CB4D78" ModuleId="ATMSimulator.UnitTests" />
-</Modules>
