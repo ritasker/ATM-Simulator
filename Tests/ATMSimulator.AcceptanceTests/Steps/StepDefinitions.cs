@@ -1,4 +1,4 @@
-﻿using ATMSimulator.App;
+using ATMSimulator.App;
 using TechTalk.SpecFlow;
 
 namespace ATMSimulator.AcceptanceTests.Steps
@@ -6,10 +6,10 @@ namespace ATMSimulator.AcceptanceTests.Steps
     [Binding]
     public class StepDefinitions
     {
-        protected BankAtm _bankAtm;
+        protected static BankAtm _bankAtm;
 
-        [BeforeScenario]
-        public void Setup()
+        [BeforeFeature]
+        public static void Setup()
         {
             _bankAtm = new BankAtm();
         }

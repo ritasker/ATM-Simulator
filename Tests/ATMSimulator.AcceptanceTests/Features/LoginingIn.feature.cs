@@ -65,9 +65,13 @@ namespace ATMSimulator.AcceptanceTests.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Entering a valid account number")]
+        public virtual void EnteringAValidAccountNumber()
         {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Entering a valid account number", ((string[])(null)));
 #line 6
+this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("the ATM has £1000 in it");
 #line hidden
@@ -84,23 +88,16 @@ namespace ATMSimulator.AcceptanceTests.Features
 #line 8
  testRunner.And("the following bank accounts have been setup:", ((string)(null)), table1);
 #line hidden
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Entering a valid account number")]
-        public virtual void EnteringAValidAccountNumber()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Entering a valid account number", ((string[])(null)));
-#line 12
-this.ScenarioSetup(scenarioInfo);
-#line 6
-this.FeatureBackground();
-#line 13
- testRunner.When("I enter my account number \'0123456789\'");
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Account Number",
+                        "PIN"});
+            table2.AddRow(new string[] {
+                        "0123456789",
+                        "1337"});
+#line 11
+ testRunner.When("I enter the following account number and PIN:", ((string)(null)), table2);
 #line 14
- testRunner.And("my pin \'1337\'");
-#line 15
- testRunner.Then("I should see the menu screen");
+ testRunner.Then("I should be allowed into the system");
 #line hidden
             this.ScenarioCleanup();
         }

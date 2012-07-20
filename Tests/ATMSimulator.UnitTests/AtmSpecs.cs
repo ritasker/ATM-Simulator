@@ -4,53 +4,74 @@ using Machine.Specifications;
 namespace ATMSimulator.UnitTests
 {
     [Subject(typeof(BankAtm))]
-    public class when_SetFunds_is_called
+    public class Context_for_BankAtm_class
     {
-        const int FUNDS = 1000;
-        static BankAtm _subject;
+        protected static BankAtm _bankAtm;
 
         Establish context = () =>
                                 {
-                                    _subject = new BankAtm();
+                                    _bankAtm = new BankAtm();
                                 };
-
-        Because of = () => _subject.SetFunds(FUNDS);
-
-        It should_set_the_funds = () => _subject.GetFunds().ShouldEqual(FUNDS);
     }
 
-    [Subject(typeof(BankAtm))]
-    public class when_GetFunds_is_called
+
+    public class when_SetFunds_is_called : Context_for_BankAtm_class
+    {
+        const int FUNDS = 1000;
+
+        Because of = () => _bankAtm.SetFunds(FUNDS);
+
+        It should_set_the_funds = () => _bankAtm.Funds.ShouldEqual(FUNDS);
+    }
+
+    public class when_GetFunds_is_called : Context_for_BankAtm_class
     {
         const int FUNDS = 1000;
         static int _result;
-        static BankAtm _subject;
 
-        Establish context = () =>
-        {
-            _subject = new BankAtm();
-            _subject.SetFunds(FUNDS);
-        };
+        Establish context = () => _bankAtm.SetFunds(FUNDS);
 
-        Because of = () => { _result = _subject.GetFunds(); };
+        Because of = () => { _result = _bankAtm.GetFunds(); };
 
         It should_get_the_funds = () => _result.ShouldEqual(FUNDS);
     }
 
-    [Subject(typeof(BankAtm))]
-    public class when_AddAccount_is_called
+    public class when_AddAccount_is_called : Context_for_BankAtm_class
     {
-        static BankAtm _subject;
         private const int ACCT_NUM = 0123456789;
         private const int PIN= 1337;
         private const int BALANCE= 100;
         private const int OVERDRAFT_LIMIT= 250;
 
-        Establish context = () =>{ _subject = new BankAtm(); };
+        Because of = () => _bankAtm.AddAccount(ACCT_NUM, PIN, BALANCE, OVERDRAFT_LIMIT);
 
-        Because of = () => _subject.AddAccount(ACCT_NUM, PIN, BALANCE, OVERDRAFT_LIMIT);
-
-        It should_get_the_funds = () => _subject.Accounts.Count.ShouldEqual(1);
+        It should_get_the_funds = () => _bankAtm.Accounts.Count.ShouldEqual(1);
         
+    }
+
+    public class when_Authenticate_is_called_with_a_vailid_account : Context_for_BankAtm_class
+    {
+        private const int PIN = 1337;
+        private static bool _result;
+        private const int ACCT_NUM = 0123456789;
+
+        Establish context = () => _bankAtm.AddAccount(ACCT_NUM, PIN, 0, 0);
+
+        private Because of = () => _result = _bankAtm.Authenticate(ACCT_NUM, PIN);
+
+        private It should_return_true = () => _result.ShouldBeTrue();
+    }
+
+    public class when_Authenticate_is_called_with_an_invailid_account : Context_for_BankAtm_class
+    {
+        private const int PIN = 1337;
+        private static bool _result;
+        private const int ACCT_NUM = 0123456789;
+
+        Establish context = () => _bankAtm.AddAccount(ACCT_NUM, PIN, 0, 0);
+
+        private Because of = () => _result = _bankAtm.Authenticate(ACCT_NUM, 2468);
+
+        private It should_return_true = () => _result.ShouldBeFalse();
     }
 }

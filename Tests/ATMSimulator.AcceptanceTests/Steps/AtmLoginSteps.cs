@@ -1,32 +1,31 @@
-﻿using TechTalk.SpecFlow;
+﻿using System;
+using System.Collections.Generic;
+using NUnit.Framework;
+using TechTalk.SpecFlow;
 
 namespace ATMSimulator.AcceptanceTests.Steps
 {
     [Binding]
     public class AtmLoginSteps : StepDefinitions
     {
-        [Given(@"I am not logged in")]
-        public void GivenIAmNotLoggedIn()
+        List<bool> _authenticationResult = new List<bool>();
+
+        [When(@"I enter the following account number and PIN:")]
+        public void WhenIEnterTheFollowingAccountNumberAndPIN(Table table)
         {
-            ScenarioContext.Current.Pending();
+            foreach (var row in table.Rows)
+            {
+                long accountNumber = Convert.ToInt32(row["Account Number"]);
+                int pin = Convert.ToInt16(row["PIN"]);
+
+                _authenticationResult.Add(_bankAtm.Authenticate(accountNumber, pin));
+            }
         }
 
-        [When(@"I enter my account number '0123456789'")]
-        public void WhenIEnterMyAccountNumber0123456789()
+        [Then(@"I should be allowed into the system")]
+        public void ThenIShouldBeAllowedIntoTheSystem()
         {
-            ScenarioContext.Current.Pending();
-        }
-
-        [When(@"my pin '1337'")]
-        public void WhenMyPin1337()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"I should see the menu screen")]
-        public void ThenIShouldSeeTheMenuScreen()
-        {
-            ScenarioContext.Current.Pending();
+            Assert.That(_authenticationResult, Is.All.True);
         }
 
     }
