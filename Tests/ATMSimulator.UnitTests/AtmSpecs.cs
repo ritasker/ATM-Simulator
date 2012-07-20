@@ -1,4 +1,5 @@
-﻿using ATMSimulator.App;
+﻿using System.Collections.Generic;
+using ATMSimulator.App;
 using Machine.Specifications;
 
 namespace ATMSimulator.UnitTests
@@ -73,5 +74,22 @@ namespace ATMSimulator.UnitTests
         private Because of = () => _result = _bankAtm.Authenticate(ACCT_NUM, 2468);
 
         private It should_return_true = () => _result.ShouldBeFalse();
+    }
+
+    public class when_GetBalance_is_called : Context_for_BankAtm_class
+    {
+         private const int ACCT_NUM = 0123456789;
+        private const int PIN= 1337;
+        private const int BALANCE= 100;
+        private const int OVERDRAFT_LIMIT= 250;
+        private static Dictionary<string, int> _result;
+
+        Establish context = () => _bankAtm.AddAccount(ACCT_NUM, PIN, BALANCE, OVERDRAFT_LIMIT);
+
+        private Because of = () => { _result = _bankAtm.GetBalance(ACCT_NUM); };
+
+        private It should_return_the_balance = () => _result["balance"].ShouldEqual(BALANCE);
+
+        private It should_return_the_available_funds = () => _result["available"].ShouldEqual(BALANCE + OVERDRAFT_LIMIT);
     }
 }

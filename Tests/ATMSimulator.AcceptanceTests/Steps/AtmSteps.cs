@@ -6,7 +6,7 @@ using TechTalk.SpecFlow;
 namespace ATMSimulator.AcceptanceTests.Steps
 {
     [Binding]
-    public class AtmLoginSteps : StepDefinitions
+    public class AtmSteps : StepDefinitions
     {
         List<bool> _authenticationResult = new List<bool>();
 
@@ -20,6 +20,13 @@ namespace ATMSimulator.AcceptanceTests.Steps
 
                 _authenticationResult.Add(_bankAtm.Authenticate(accountNumber, pin));
             }
+        }
+
+        [When(@"I request to see my balance for my account '(.*)'")]
+        public void WhenIRequestToSeeMyBalance(string accountNumber)
+        {
+            long acctNum = Convert.ToInt32(accountNumber);
+            _bankAtm.GetBalance(acctNum);
         }
 
         [Then(@"I should be allowed into the system")]

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ATMSimulator.App.Models;
 using System.Linq;
@@ -28,6 +29,16 @@ namespace ATMSimulator.App
         {
             var account = Accounts.SingleOrDefault(x => x.AccountNumber == accountNumber && x.Pin == pin);
             return account != null;
+        }
+
+        public Dictionary<string, int> GetBalance(long accountNumber)
+        {
+            var info = new Dictionary<string, int>();
+            
+            info.Add("balance", Accounts.SingleOrDefault(y => y.AccountNumber == accountNumber).Balance);
+            info.Add("available", Accounts.Where(y => y.AccountNumber == accountNumber).Select(x => x.Balance + x.OverDraftLimit).Single());
+
+            return info;
         }
     }
 }

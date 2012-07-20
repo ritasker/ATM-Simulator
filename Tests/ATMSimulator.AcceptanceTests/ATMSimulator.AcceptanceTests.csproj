@@ -47,18 +47,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\DisplayBalance.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DisplayBalance.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\LoginingIn.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginingIn.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps\AtmLoginSteps.cs" />
+    <Compile Include="Steps\AtmSteps.cs" />
     <Compile Include="Steps\SetupSteps.cs" />
     <Compile Include="Steps\StepDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\DisplayBalance.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DisplayBalance.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\LoginingIn.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LoginingIn.feature.cs</LastGenOutput>

@@ -7,6 +7,7 @@ namespace ATMSimulator.App
         private static BankAtm _bankAtm;
         private static int _accountNumber;
         private static int _pin;
+        private static bool _authenticated;
 
         static void Main(string[] args)
         {
@@ -18,31 +19,53 @@ namespace ATMSimulator.App
             {
                 LoginScreen();
 
-                var authenticated = _bankAtm.Authenticate(_accountNumber, _pin);
+                _authenticated = _bankAtm.Authenticate(_accountNumber, _pin);
 
-                if(authenticated)
+                if (_authenticated)
                 {
-                    MenuScreen();
-                    ParseOption(Console.ReadLine());
+                    while (_authenticated)
+                    {
+                        Console.Clear();
+                        MenuScreen();
+                        ParseOption(Console.ReadLine());
+                    }
                 }
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine("Login Failed!");
+                    Console.WriteLine("Login Failed!");    
                 }
             }
         }
 
         private static void ParseOption(string option)
         {
+            Console.Clear();
+
             switch (option)
             {
-                case "1": break;
+                case "1":
+                    DispalyBalance();
+                    break;
                 case "2": break;
-                case "3": break;
+                case "3":
+                    _authenticated = false;
+                    break;
                 default: Console.WriteLine("Invalid Option:");
-                    ParseOption(Console.ReadLine());
+                        MenuScreen();
+                        ParseOption(Console.ReadLine());
+                    break;
             }
+        }
+
+        private static void DispalyBalance()
+        {
+            var accountInfo = _bankAtm.GetBalance(_accountNumber);
+
+            Console.WriteLine("Account Balance:\t\t{0:C}", accountInfo["balance"]);
+            Console.WriteLine("Available Funds:\t\t{0:C}", accountInfo["available"]);
+            Console.WriteLine("Press enter to continue...");
+            Console.ReadLine();
         }
 
         private static void MenuScreen()
