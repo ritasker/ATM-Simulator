@@ -1,7 +1,6 @@
 namespace ATMSimulator.App
 {
     using System;
-    using ATMSimulator.App.Services;
     using ATMSimulator.App.Services.Interfaces;
 
     public class AtmMachine
